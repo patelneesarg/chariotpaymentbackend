@@ -1,0 +1,7 @@
+[
+  { "id": "txn_001", "amount": 5000, "currency": "USD", "scheduled_date": "2025-08-15", "recipient": "John Doe" },
+  { "id": "txn_002", "amount": 3200, "currency": "USD", "scheduled_date": "2025-08-17", "recipient": "Jane Smith" },
+  { "id": "txn_003", "amount": 1500, "currency": "USD", "scheduled_date": "2025-08-18", "recipient": "Alice Johnson" },
+  { "id": "txn_004", "amount": 2700, "currency": "USD", "scheduled_date": "2025-08-19", "recipient": "John Doe" },
+  { "id": "txn_005", "amount": 4500, "currency": "USD", "scheduled_date": "2025-08-20", "recipient": "Charlie Davis" }
+]
