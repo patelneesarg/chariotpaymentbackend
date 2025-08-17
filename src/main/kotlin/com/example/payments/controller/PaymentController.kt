@@ -14,8 +14,8 @@ class PaymentController(private val service: PaymentService) {
         @RequestParam(required = false) date: String?,
         @RequestParam(required = false) recipient: String?
     ): Map<String, Any> {
-        val afterDate: LocalDate? = date?.let { LocalDate.parse(it) }
-        val filtered: List<Payment> = service.getPayments(afterDate, recipient)
+        val date: LocalDate? = date?.let { LocalDate.parse(it) }
+        val filtered: List<Payment> = service.getPayments(date, recipient)
 
         return mapOf(
             "payments" to filtered,
