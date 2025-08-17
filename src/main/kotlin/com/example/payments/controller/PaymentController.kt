@@ -11,11 +11,11 @@ class PaymentController(private val service: PaymentService) {
 
     @GetMapping
     fun listPayments(
-        @RequestParam(required = false) date: String?,
+        @RequestParam(required = false) after: String?,
         @RequestParam(required = false) recipient: String?
     ): Map<String, Any> {
-        val date: LocalDate? = date?.let { LocalDate.parse(it) }
-        val filtered: List<Payment> = service.getPayments(date, recipient)
+        val after: LocalDate? = after?.let { LocalDate.parse(it) }
+        val filtered: List<Payment> = service.getPayments(after, recipient)
 
         return mapOf(
             "payments" to filtered,

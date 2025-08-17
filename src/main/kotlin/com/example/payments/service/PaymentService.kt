@@ -9,11 +9,11 @@ import java.time.temporal.ChronoUnit
 @Service
 class PaymentService(private val repository: PaymentRepository) {
 
-    fun getPayments(date: LocalDate?, recipient: String?): List<Payment> {
+    fun getPayments(after: LocalDate?, recipient: String?): List<Payment> {
         val today = LocalDate.now()
 
         return repository.findAll()
-            .filter { date == null || it.scheduledDate.isEqual(date) }
+            .filter { after == null || !it.scheduledDate.isBefore(after) }
             .filter { recipient == null || it.recipient.equals(recipient, ignoreCase = true) }
             .map { payment ->
                 val daysBetween = ChronoUnit.DAYS.between(today, payment.scheduledDate)
