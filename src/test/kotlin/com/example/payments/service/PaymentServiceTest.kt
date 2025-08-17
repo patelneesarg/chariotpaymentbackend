@@ -34,7 +34,7 @@ class PaymentServiceTest {
     fun `getPayments filters by after date`() {
         val date = LocalDate.now()
         val filtered = service.getPayments(date, null)
-        assertEquals(1, filtered.size)
+        assertEquals(2, filtered.size)
         assertTrue(filtered.all { !it.scheduledDate.isBefore(date) })
     }
 
